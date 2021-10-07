@@ -29,9 +29,9 @@ public class HouseSignalization : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.TryGetComponent<Player>(out Player player) && !_signalization.isPlaying)
+        if(collision.TryGetComponent<Player>(out Player player))
         {
             _signalization.Play();
             _isUp = true;
